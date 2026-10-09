@@ -1123,18 +1123,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .arch-badges {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   gap: 12px;
 }
 
 .arch-badge-item {
-  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--c-glass-border);
   border-radius: var(--radius-full);
   font-size: 0.82rem;
   color: var(--c-silver-pure);
+  white-space: nowrap;
 }
 
 /* --------------------------------------------------------------------------
@@ -2011,6 +2015,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   .scenario-tabs {
     grid-template-columns: 1fr;
+  }
+  .arch-badges {
+    grid-template-columns: 1fr;
+  }
+  .arch-badge-item {
+    white-space: normal;
   }
   .form-row, .form-row.triple {
     grid-template-columns: 1fr;
