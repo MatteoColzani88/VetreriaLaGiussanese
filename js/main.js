@@ -147,11 +147,6 @@ function initQuoteForm() {
     });
 
     const activeTab = document.querySelector(`.scenario-tab-btn[data-scenario="${scenarioId}"]`);
-    if (activeTab && summaryScenarioName) {
-      summaryScenarioName.textContent = activeTab.getAttribute('data-label') || 'Preventivo Su Misura';
-    }
-
-    updateLiveSummary();
   }
 
   // Pre-fill / jump to scenario from CTA buttons throughout the page
@@ -168,29 +163,24 @@ function initQuoteForm() {
     });
   });
 
-  // Listen to all inputs inside form to update live summary
-  formElement.addEventListener('input', updateLiveSummary);
-  formElement.addEventListener('change', updateLiveSummary);
-
-  function updateLiveSummary() {
+  function getScenarioSummaryItems() {
     const activeTab = document.querySelector('.scenario-tab-btn.active');
     const scenario = activeTab ? activeTab.getAttribute('data-scenario') : 'docce';
     const activePanel = document.getElementById(`scenario-${scenario}`);
-    if (!activePanel || !summaryDetailsList) return;
+    if (!activePanel) return [];
 
     let items = [];
 
     if (scenario === 'parapetti') {
-      // Parapetti & Pensiline layout fields
-      const tipo = activePanel.querySelector('input[name="parapetti_tipo"]:checked')?.value || 'Non specificato';
-      const finitura = activePanel.querySelector('input[name="parapetti_finitura"]:checked')?.value || 'Extrachiaro';
-      const spessore = activePanel.querySelector('input[name="parapetti_spessore"]:checked')?.value || '8+8 (16.76 mm)';
-      const plastico = activePanel.querySelector('input[name="parapetti_plastico"]:checked')?.value || '0.76 Trasparente';
-      const termica = activePanel.querySelector('input[name="parapetti_termica"]:checked')?.value || 'Tempera + Indurito';
-      const taglio = activePanel.querySelector('input[name="parapetti_taglio"]:checked')?.value || 'Squadrato';
-      const metri = activePanel.querySelector('input[name="parapetti_metri"]')?.value || 'Da definire';
+      const tipo = activePanel.querySelector('select[name="parapetti_tipo"]')?.value || 'Parapetto Esterno';
+      const finitura = activePanel.querySelector('select[name="parapetti_finitura"]')?.value || 'Extrachiaro';
+      const spessore = activePanel.querySelector('select[name="parapetti_spessore"]')?.value || '8+8 mm';
+      const plastico = activePanel.querySelector('select[name="parapetti_plastico"]')?.value || 'SentryGlas';
+      const termica = activePanel.querySelector('select[name="parapetti_termica"]')?.value || 'Tempera + Indurito';
+      const taglio = activePanel.querySelector('select[name="parapetti_taglio"]')?.value || 'Squadrato';
+      const metri = activePanel.querySelector('input[name="parapetti_metri"]')?.value || '5.0 m';
       const hQuota = activePanel.querySelector('input[name="parapetti_altezza"]')?.value || '1000 mm';
-      const posa = activePanel.querySelector('input[name="parapetti_ferramenta"]:checked')?.value || 'Profilo a terra continuo';
+      const posa = activePanel.querySelector('select[name="parapetti_ferramenta"]')?.value || 'Profilo a terra';
 
       items = [
         { key: 'Applicazione', val: tipo },
@@ -203,12 +193,11 @@ function initQuoteForm() {
         { key: 'Ferramenta / Posa', val: posa }
       ];
     } else if (scenario === 'docce') {
-      // Box Doccia layout fields
-      const finitura = activePanel.querySelector('input[name="doccia_finitura"]:checked')?.value || 'Extrachiaro';
-      const spessore = activePanel.querySelector('input[name="doccia_spessore"]:checked')?.value || '8 mm';
-      const apertura = activePanel.querySelector('input[name="doccia_apertura"]:checked')?.value || 'Battente';
-      const config = activePanel.querySelector('input[name="doccia_config"]:checked')?.value || 'Angolare (2 Lati)';
-      const anticalcare = activePanel.querySelector('input[name="doccia_anticalcare"]:checked')?.value || 'Sì (Consigliato)';
+      const finitura = activePanel.querySelector('select[name="doccia_finitura"]')?.value || 'Extrachiaro';
+      const spessore = activePanel.querySelector('select[name="doccia_spessore"]')?.value || '8 mm';
+      const apertura = activePanel.querySelector('select[name="doccia_apertura"]')?.value || 'Battente';
+      const config = activePanel.querySelector('select[name="doccia_config"]')?.value || 'Angolare (2 Lati)';
+      const anticalcare = activePanel.querySelector('select[name="doccia_anticalcare"]')?.value || 'Sì (Consigliato)';
       const l1 = activePanel.querySelector('input[name="doccia_l1"]')?.value || '800';
       const l2 = activePanel.querySelector('input[name="doccia_l2"]')?.value || '1200';
       const h = activePanel.querySelector('input[name="doccia_h"]')?.value || '2000';
@@ -224,39 +213,26 @@ function initQuoteForm() {
         { key: 'Finitura Accessori', val: ferrFinitura }
       ];
     } else if (scenario === 'specchi') {
-      // Specchi su Misura layout fields
-      const finitura = activePanel.querySelector('input[name="specchio_finitura"]:checked')?.value || 'Naturale';
-      const spessore = activePanel.querySelector('input[name="specchio_spessore"]:checked')?.value || '5 mm';
-      const pellicola = activePanel.querySelector('input[name="specchio_pellicola"]:checked')?.value || 'Sì + Rifilo';
-      const taglio = activePanel.querySelector('input[name="specchio_taglio"]:checked')?.value || 'Squadrato';
+      const finitura = activePanel.querySelector('select[name="specchio_finitura"]')?.value || 'Naturale Chiaro';
+      const spessore = activePanel.querySelector('select[name="specchio_spessore"]')?.value || '5 mm';
+      const pellicola = activePanel.querySelector('select[name="specchio_pellicola"]')?.value || 'Sì + Rifilo';
+      const lavorazione = activePanel.querySelector('select[name="specchio_lavorazione"]')?.value || 'Filo Lucido Base';
+      const taglio = activePanel.querySelector('select[name="specchio_taglio"]')?.value || 'Squadrato';
       const l = activePanel.querySelector('input[name="specchio_l"]')?.value || '1000';
       const h = activePanel.querySelector('input[name="specchio_h"]')?.value || '1800';
       const qta = activePanel.querySelector('input[name="specchio_qta"]')?.value || '1';
-
-      // Check special workings
-      const lavorazioni = [];
-      if (activePanel.querySelector('input[name="specchio_lav_bisello"]')?.checked) lavorazioni.push('Bisello');
-      if (activePanel.querySelector('input[name="specchio_lav_45"]')?.checked) lavorazioni.push('Molatura 45°');
-      if (activePanel.querySelector('input[name="specchio_lav_fori"]')?.checked) lavorazioni.push('Forature');
-      if (activePanel.querySelector('input[name="specchio_lav_tacche"]')?.checked) lavorazioni.push('Tacche prese');
 
       items = [
         { key: 'Finitura Specchio', val: finitura },
         { key: 'Spessore', val: spessore },
         { key: 'Pellicola Sicurezza', val: pellicola },
+        { key: 'Lavorazione Bordo', val: lavorazione },
         { key: 'Tipo Taglio', val: taglio },
-        { key: 'Misure (LxH)', val: `${l} x ${h} mm (x${qta} pz)` },
-        { key: 'Lavorazioni speciali', val: lavorazioni.length ? lavorazioni.join(', ') : 'Filo Lucido Base' }
+        { key: 'Misure (LxH)', val: `${l} x ${h} mm (x${qta} pz)` }
       ];
     }
 
-    // Render summary list HTML
-    summaryDetailsList.innerHTML = items.map(it => `
-      <li>
-        <span class="key">${it.key}</span>
-        <span class="val">${it.val}</span>
-      </li>
-    `).join('');
+    return items;
   }
 
   // Handle Form Submit
@@ -276,6 +252,7 @@ function initQuoteForm() {
     const refNum = `PREV-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
     const activeTab = document.querySelector('.scenario-tab-btn.active');
     const scenarioName = activeTab ? activeTab.getAttribute('data-label') : 'Preventivo';
+    const summaryItems = getScenarioSummaryItems();
 
     // Show modal
     showQuoteSuccessModal({
@@ -284,12 +261,10 @@ function initQuoteForm() {
       clientEmail,
       clientPhone,
       clientCity,
-      scenarioName
+      scenarioName,
+      items: summaryItems
     });
   });
-
-  // Initial call
-  updateLiveSummary();
 }
 
 function showQuoteSuccessModal(data) {
@@ -298,14 +273,20 @@ function showQuoteSuccessModal(data) {
 
   const recapEl = document.getElementById('modal-recap-content');
   if (recapEl) {
-    const summaryList = document.getElementById('summary-details-list');
+    const itemsHtml = (data.items || []).map(it => `
+      <div style="display:flex; justify-content:space-between; gap:12px; margin-bottom:4px;">
+        <span style="color:var(--c-grey-400);">${it.key}:</span>
+        <span style="color:#ffffff; font-weight:500;">${it.val}</span>
+      </div>
+    `).join('');
+
     recapEl.innerHTML = `
       <p><strong>Riferimento:</strong> <span style="color:#ffffff;">${data.refNum}</span></p>
       <p><strong>Intestatario:</strong> ${data.clientName} (${data.clientCity})</p>
       <p><strong>Contatti:</strong> ${data.clientEmail || 'N/A'} | ${data.clientPhone || 'N/A'}</p>
       <p><strong>Tipologia:</strong> ${data.scenarioName}</p>
       <div style="margin-top:12px; padding-top:10px; border-top:1px dashed rgba(255,255,255,0.1); font-size:0.82rem;">
-        ${summaryList ? summaryList.innerHTML : ''}
+        ${itemsHtml}
       </div>
     `;
   }

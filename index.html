@@ -844,137 +844,66 @@
               Specifiche Parapetto o Pensilina
             </div>
 
-            <!-- Applicazione -->
-            <div class="form-field" style="margin-bottom:20px;">
-              <label>Tipologia Applicazione</label>
-              <div class="pill-options-grid">
-                <div>
-                  <input type="radio" name="parapetti_tipo" id="p-tipo-est" value="Parapetto Esterno / Balcone"
-                    class="pill-option-input" checked>
-                  <label for="p-tipo-est" class="pill-option-label">Parapetto Esterno</label>
-                </div>
-                <div>
-                  <input type="radio" name="parapetti_tipo" id="p-tipo-int" value="Parapetto Interno / Soppalco"
-                    class="pill-option-input">
-                  <label for="p-tipo-int" class="pill-option-label">Parapetto Interno</label>
-                </div>
-                <div>
-                  <input type="radio" name="parapetti_tipo" id="p-tipo-pens" value="Pensilina a Sbalzo / Tiranti"
-                    class="pill-option-input">
-                  <label for="p-tipo-pens" class="pill-option-label">Pensilina</label>
-                </div>
+            <!-- Applicazione & Finitura -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="parapetti-tipo-select">Tipologia Applicazione</label>
+                <select name="parapetti_tipo" id="parapetti-tipo-select" class="form-select">
+                  <option value="Parapetto Esterno / Balcone" selected>Parapetto Esterno / Balcone</option>
+                  <option value="Parapetto Interno / Soppalco">Parapetto Interno / Soppalco</option>
+                  <option value="Pensilina a Sbalzo / Tiranti">Pensilina a Sbalzo / Tiranti</option>
+                </select>
               </div>
-            </div>
 
-            <!-- Finitura Vetro -->
-            <div class="form-field" style="margin-bottom:20px;">
-              <label>Finitura Cristallo</label>
-              <div class="pill-options-grid">
-                <div>
-                  <input type="radio" name="parapetti_finitura" id="p-fin-ext" value="Extrachiaro"
-                    class="pill-option-input" checked>
-                  <label for="p-fin-ext" class="pill-option-label">Extrachiaro</label>
-                </div>
-                <div>
-                  <input type="radio" name="parapetti_finitura" id="p-fin-tra" value="Trasparente"
-                    class="pill-option-input">
-                  <label for="p-fin-tra" class="pill-option-label">Trasparente</label>
-                </div>
-                <div>
-                  <input type="radio" name="parapetti_finitura" id="p-fin-fume" value="Bronzo / Fumé"
-                    class="pill-option-input">
-                  <label for="p-fin-fume" class="pill-option-label">Bronzo / Fumé</label>
-                </div>
-                <div>
-                  <input type="radio" name="parapetti_finitura" id="p-fin-sat" value="Satinato"
-                    class="pill-option-input">
-                  <label for="p-fin-sat" class="pill-option-label">Satinato</label>
-                </div>
+              <div class="form-field">
+                <label for="parapetti-finitura-select">Finitura Cristallo</label>
+                <select name="parapetti_finitura" id="parapetti-finitura-select" class="form-select">
+                  <option value="Extrachiaro" selected>Extrachiaro</option>
+                  <option value="Trasparente">Trasparente</option>
+                  <option value="Bronzo / Fumé">Bronzo / Fumé</option>
+                  <option value="Satinato">Satinato</option>
+                </select>
               </div>
             </div>
 
             <!-- Spessore & Plastico Intercalare -->
             <div class="form-row">
               <div class="form-field">
-                <label>Spessore Vetro Stratificato</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="parapetti_spessore" id="p-sp-88" value="8+8 (16.76 mm)"
-                      class="pill-option-input" checked>
-                    <label for="p-sp-88" class="pill-option-label">8+8 mm</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="parapetti_spessore" id="p-sp-1010" value="10+10 (20.76 mm)"
-                      class="pill-option-input">
-                    <label for="p-sp-1010" class="pill-option-label">10+10 mm</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="parapetti_spessore" id="p-sp-alt" value="Altro Spessore Strutturale"
-                      class="pill-option-input">
-                    <label for="p-sp-alt" class="pill-option-label">Altro</label>
-                  </div>
-                </div>
+                <label for="parapetti-spessore-select">Spessore Vetro Stratificato</label>
+                <select name="parapetti_spessore" id="parapetti-spessore-select" class="form-select">
+                  <option value="8+8 (16.76 mm)" selected>8+8 mm (16.76 mm)</option>
+                  <option value="10+10 (20.76 mm)">10+10 mm (20.76 mm)</option>
+                  <option value="Altro Spessore Strutturale">Altro Spessore Strutturale</option>
+                </select>
               </div>
 
               <div class="form-field">
-                <label>Plastico / Intercalare</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="parapetti_plastico" id="p-pl-sg" value="SentryGlas (SG 1.52)"
-                      class="pill-option-input" checked>
-                    <label for="p-pl-sg" class="pill-option-label">SentryGlas (Max Sicurezza)</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="parapetti_plastico" id="p-pl-pvb-tra" value="PVB 0.76 Trasparente"
-                      class="pill-option-input">
-                    <label for="p-pl-pvb-tra" class="pill-option-label">0.76 Trasp.</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="parapetti_plastico" id="p-pl-pvb-latte" value="PVB Bianco Latte (Privacy)"
-                      class="pill-option-input">
-                    <label for="p-pl-pvb-latte" class="pill-option-label">Bianco Latte</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="parapetti_plastico" id="p-pl-pvb-fume" value="PVB Bronzo/Fumé"
-                      class="pill-option-input">
-                    <label for="p-pl-pvb-fume" class="pill-option-label">Bronzo/Fumé</label>
-                  </div>
-                </div>
+                <label for="parapetti-plastico-select">Plastico / Intercalare</label>
+                <select name="parapetti_plastico" id="parapetti-plastico-select" class="form-select">
+                  <option value="SentryGlas (SG 1.52)" selected>SentryGlas (SG 1.52 - Max Sicurezza)</option>
+                  <option value="PVB 0.76 Trasparente">PVB 0.76 Trasparente</option>
+                  <option value="PVB Bianco Latte (Privacy)">PVB Bianco Latte (Privacy)</option>
+                  <option value="PVB Bronzo/Fumé">PVB Bronzo / Fumé</option>
+                </select>
               </div>
             </div>
 
             <!-- Lavorazioni Termiche & Taglio -->
             <div class="form-row">
               <div class="form-field">
-                <label>Lavorazioni Termiche</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="parapetti_termica" id="p-ter-tempind" value="Tempera + Indurito"
-                      class="pill-option-input" checked>
-                    <label for="p-ter-tempind" class="pill-option-label">Tempera + Indurito</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="parapetti_termica" id="p-ter-tuttotemp" value="Tutto Temperato"
-                      class="pill-option-input">
-                    <label for="p-ter-tuttotemp" class="pill-option-label">Tutto Temperato</label>
-                  </div>
-                </div>
+                <label for="parapetti-termica-select">Lavorazioni Termiche</label>
+                <select name="parapetti_termica" id="parapetti-termica-select" class="form-select">
+                  <option value="Tempera + Indurito" selected>Tempera + Indurito</option>
+                  <option value="Tutto Temperato">Tutto Temperato</option>
+                </select>
               </div>
 
               <div class="form-field">
-                <label>Tipo Taglio</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="parapetti_taglio" id="p-tag-sq" value="Squadrato"
-                      class="pill-option-input" checked>
-                    <label for="p-tag-sq" class="pill-option-label">Squadrato</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="parapetti_taglio" id="p-tag-sag" value="Sagomato (scale/pendenze)"
-                      class="pill-option-input">
-                    <label for="p-tag-sag" class="pill-option-label">Sagomato</label>
-                  </div>
-                </div>
+                <label for="parapetti-taglio-select">Tipo Taglio</label>
+                <select name="parapetti_taglio" id="parapetti-taglio-select" class="form-select">
+                  <option value="Squadrato" selected>Squadrato</option>
+                  <option value="Sagomato (scale/pendenze)">Sagomato (scale / pendenze)</option>
+                </select>
               </div>
             </div>
 
@@ -993,29 +922,13 @@
             </div>
 
             <div class="form-field" style="margin-bottom:24px;">
-              <label>Sistema di Fissaggio / Ferramenta</label>
-              <div class="pill-options-grid">
-                <div>
-                  <input type="radio" name="parapetti_ferramenta" id="p-fer-prof"
-                    value="Profilo continuo a terra (affogato o a vista)" class="pill-option-input" checked>
-                  <label for="p-fer-prof" class="pill-option-label">Profilo a Pavimento</label>
-                </div>
-                <div>
-                  <input type="radio" name="parapetti_ferramenta" id="p-fer-per"
-                    value="Puntiforme / Borchie laterali in acciaio" class="pill-option-input">
-                  <label for="p-fer-per" class="pill-option-label">Borchie a Parete</label>
-                </div>
-                <div>
-                  <input type="radio" name="parapetti_ferramenta" id="p-fer-mors"
-                    value="Morsetti a pavimento o piantoni" class="pill-option-input">
-                  <label for="p-fer-mors" class="pill-option-label">Morsetti</label>
-                </div>
-                <div>
-                  <input type="radio" name="parapetti_ferramenta" id="p-fer-tir"
-                    value="Tiranti per pensilina in acciaio inox" class="pill-option-input">
-                  <label for="p-fer-tir" class="pill-option-label">Tiranti Sospesi</label>
-                </div>
-              </div>
+              <label for="parapetti-ferramenta-select">Sistema di Fissaggio / Ferramenta</label>
+              <select name="parapetti_ferramenta" id="parapetti-ferramenta-select" class="form-select">
+                <option value="Profilo continuo a terra (affogato o a vista)" selected>Profilo continuo a terra (affogato o a vista)</option>
+                <option value="Puntiforme / Borchie laterali in acciaio">Puntiforme / Borchie laterali in acciaio</option>
+                <option value="Morsetti a pavimento o piantoni">Morsetti a pavimento o piantoni</option>
+                <option value="Tiranti per pensilina in acciaio inox">Tiranti per pensilina in acciaio inox</option>
+              </select>
             </div>
           </div>
 
@@ -1031,110 +944,65 @@
             <!-- Configurazione Spazio & Apertura -->
             <div class="form-row">
               <div class="form-field">
-                <label>Configurazione Vano</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="doccia_config" id="d-cfg-ang" value="Angolare (2 Lati)"
-                      class="pill-option-input" checked>
-                    <label for="d-cfg-ang" class="pill-option-label">Angolare (2 Lati)</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_config" id="d-cfg-nic" value="Nicchia (1 Lato)"
-                      class="pill-option-input">
-                    <label for="d-cfg-nic" class="pill-option-label">Nicchia</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_config" id="d-cfg-3l" value="3 Lati (Centro Parete)"
-                      class="pill-option-input">
-                    <label for="d-cfg-3l" class="pill-option-label">3 Lati</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_config" id="d-cfg-4l" value="4 Lati (Centro Stanza)"
-                      class="pill-option-input">
-                    <label for="d-cfg-4l" class="pill-option-label">4 Lati</label>
-                  </div>
-                </div>
+                <label for="doccia-config-select">Configurazione Vano</label>
+                <select name="doccia_config" id="doccia-config-select" class="form-select">
+                  <option value="Angolare (2 Lati)" selected>Angolare (2 Lati)</option>
+                  <option value="Nicchia (1 Lato)">Nicchia (1 Lato)</option>
+                  <option value="3 Lati (Centro Parete)">3 Lati (Centro Parete)</option>
+                  <option value="4 Lati (Centro Stanza)">4 Lati (Centro Stanza)</option>
+                </select>
               </div>
 
               <div class="form-field">
-                <label>Tipo di Apertura</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="doccia_apertura" id="d-ap-bat" value="Battente" class="pill-option-input"
-                      checked>
-                    <label for="d-ap-bat" class="pill-option-label">Battente</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_apertura" id="d-ap-sco" value="Scorrevole"
-                      class="pill-option-input">
-                    <label for="d-ap-sco" class="pill-option-label">Scorrevole</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_apertura" id="d-ap-wal" value="Walk-In (Fisso Libero)"
-                      class="pill-option-input">
-                    <label for="d-ap-wal" class="pill-option-label">Walk-In</label>
-                  </div>
-                </div>
+                <label for="doccia-apertura-select">Tipo di Apertura</label>
+                <select name="doccia_apertura" id="doccia-apertura-select" class="form-select">
+                  <option value="Battente" selected>Battente</option>
+                  <option value="Scorrevole">Scorrevole</option>
+                  <option value="Walk-In (Fisso Libero)">Walk-In (Fisso Libero)</option>
+                </select>
               </div>
             </div>
 
             <!-- Finitura & Spessore -->
             <div class="form-row">
               <div class="form-field">
-                <label>Finitura Cristallo</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="doccia_finitura" id="d-fin-ext" value="Extrachiaro"
-                      class="pill-option-input" checked>
-                    <label for="d-fin-ext" class="pill-option-label">Extrachiaro</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_finitura" id="d-fin-tra" value="Trasparente"
-                      class="pill-option-input">
-                    <label for="d-fin-tra" class="pill-option-label">Trasparente</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_finitura" id="d-fin-fume" value="Bronzo / Fumé"
-                      class="pill-option-input">
-                    <label for="d-fin-fume" class="pill-option-label">Bronzo / Fumé</label>
-                  </div>
-                </div>
+                <label for="doccia-finitura-select">Finitura Cristallo</label>
+                <select name="doccia_finitura" id="doccia-finitura-select" class="form-select">
+                  <option value="Extrachiaro" selected>Extrachiaro</option>
+                  <option value="Trasparente">Trasparente</option>
+                  <option value="Bronzo / Fumé">Bronzo / Fumé</option>
+                </select>
               </div>
 
               <div class="form-field">
-                <label>Spessore Lastra</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="doccia_spessore" id="d-sp-8" value="8 mm (Standard Prestige)"
-                      class="pill-option-input" checked>
-                    <label for="d-sp-8" class="pill-option-label">8 mm</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_spessore" id="d-sp-6" value="6 mm" class="pill-option-input">
-                    <label for="d-sp-6" class="pill-option-label">6 mm</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="doccia_spessore" id="d-sp-10" value="10 mm (Solid Luxury)"
-                      class="pill-option-input">
-                    <label for="d-sp-10" class="pill-option-label">10 mm</label>
-                  </div>
-                </div>
+                <label for="doccia-spessore-select">Spessore Lastra</label>
+                <select name="doccia_spessore" id="doccia-spessore-select" class="form-select">
+                  <option value="8 mm (Standard Prestige)" selected>8 mm (Standard Prestige)</option>
+                  <option value="6 mm">6 mm</option>
+                  <option value="10 mm (Solid Luxury)">10 mm (Solid Luxury)</option>
+                </select>
               </div>
             </div>
 
-            <!-- Trattamento Anticalcare -->
-            <div class="form-field" style="margin-bottom:20px;">
-              <label>Trattamento Idrorepellente Anticalcare</label>
-              <div class="pill-options-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div>
-                  <input type="radio" name="doccia_anticalcare" id="d-ac-si" value="Sì (Consigliato)"
-                    class="pill-option-input" checked>
-                  <label for="d-ac-si" class="pill-option-label">&check; Sì (Vetro sempre brillante)</label>
-                </div>
-                <div>
-                  <input type="radio" name="doccia_anticalcare" id="d-ac-no" value="No" class="pill-option-input">
-                  <label for="d-ac-no" class="pill-option-label">No</label>
-                </div>
+            <!-- Trattamento Anticalcare & Finitura Ferramenta -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="doccia-anticalcare-select">Trattamento Idrorepellente Anticalcare</label>
+                <select name="doccia_anticalcare" id="doccia-anticalcare-select" class="form-select">
+                  <option value="Sì (Consigliato)" selected>Sì (Vetro sempre brillante - Consigliato)</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="doccia-ferramenta-select">Finitura Cerniere, Profili &amp; Maniglie</label>
+                <select name="doccia_ferramenta_finitura" id="doccia-ferramenta-select" class="form-select">
+                  <option value="Nero Opaco (Matt Black)" selected>Nero Opaco (Matt Black)</option>
+                  <option value="Cromo Lucido Brillante">Cromo Lucido Brillante</option>
+                  <option value="Acciaio Inox Satinato">Acciaio Inox Satinato</option>
+                  <option value="Ottone / Oro Spazzolato">Ottone / Oro Spazzolato</option>
+                  <option value="Bronzo Satinato">Bronzo Satinato</option>
+                </select>
               </div>
             </div>
 
@@ -1153,18 +1021,6 @@
                 <input type="number" name="doccia_h" class="form-input" placeholder="2000" value="2000">
               </div>
             </div>
-
-            <!-- Ferramenta finitura -->
-            <div class="form-field" style="margin-bottom:24px;">
-              <label>Finitura Cerniere, Profili &amp; Maniglie</label>
-              <select name="doccia_ferramenta_finitura" class="form-select">
-                <option value="Nero Opaco (Matt Black)" selected>Nero Opaco (Matt Black)</option>
-                <option value="Cromo Lucido Brillante">Cromo Lucido Brillante</option>
-                <option value="Acciaio Inox Satinato">Acciaio Inox Satinato</option>
-                <option value="Ottone / Oro Spazzolato">Ottone / Oro Spazzolato</option>
-                <option value="Bronzo Satinato">Bronzo Satinato</option>
-              </select>
-            </div>
           </div>
 
           <!-- SCENARIO 3: SPECCHI SU MISURA (from LAYOUT PREVENTIVO SPECCHI.pdf) -->
@@ -1179,111 +1035,56 @@
             <!-- Finitura & Spessore -->
             <div class="form-row">
               <div class="form-field">
-                <label>Finitura Specchio</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="specchio_finitura" id="s-fin-nat" value="Naturale Chiaro"
-                      class="pill-option-input" checked>
-                    <label for="s-fin-nat" class="pill-option-label">Naturale</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="specchio_finitura" id="s-fin-ext" value="Extrachiaro (Pure HD)"
-                      class="pill-option-input">
-                    <label for="s-fin-ext" class="pill-option-label">Extrachiaro</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="specchio_finitura" id="s-fin-fume" value="Bronzo / Fumé"
-                      class="pill-option-input">
-                    <label for="s-fin-fume" class="pill-option-label">Bronzo/Fumé</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="specchio_finitura" id="s-fin-bn" value="Specchio Bianco / Nero"
-                      class="pill-option-input">
-                    <label for="s-fin-bn" class="pill-option-label">Bianco/Nero</label>
-                  </div>
-                </div>
+                <label for="specchio-finitura-select">Finitura Specchio</label>
+                <select name="specchio_finitura" id="specchio-finitura-select" class="form-select">
+                  <option value="Naturale Chiaro" selected>Naturale Chiaro</option>
+                  <option value="Extrachiaro (Pure HD)">Extrachiaro (Pure HD)</option>
+                  <option value="Bronzo / Fumé">Bronzo / Fumé</option>
+                  <option value="Specchio Bianco / Nero">Specchio Bianco / Nero</option>
+                </select>
               </div>
 
               <div class="form-field">
-                <label>Spessore</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="specchio_spessore" id="s-sp-5" value="5 mm (Consigliato)"
-                      class="pill-option-input" checked>
-                    <label for="s-sp-5" class="pill-option-label">5 mm</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="specchio_spessore" id="s-sp-4" value="4 mm" class="pill-option-input">
-                    <label for="s-sp-4" class="pill-option-label">4 mm</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="specchio_spessore" id="s-sp-6" value="6 mm (Grandi specchi)"
-                      class="pill-option-input">
-                    <label for="s-sp-6" class="pill-option-label">6 mm</label>
-                  </div>
-                </div>
+                <label for="specchio-spessore-select">Spessore</label>
+                <select name="specchio_spessore" id="specchio-spessore-select" class="form-select">
+                  <option value="5 mm (Consigliato)" selected>5 mm (Consigliato)</option>
+                  <option value="4 mm">4 mm</option>
+                  <option value="6 mm (Grandi specchi)">6 mm (Grandi specchi)</option>
+                </select>
               </div>
             </div>
 
-            <!-- Pellicola Sicurezza -->
-            <div class="form-field" style="margin-bottom:20px;">
-              <label>Pellicola di Sicurezza Antiframmentazione (Retro Specchio)</label>
-              <div class="pill-options-grid">
-                <div>
-                  <input type="radio" name="specchio_pellicola" id="s-pel-rifilo" value="Sì + Rifilo Perimetrale"
-                    class="pill-option-input" checked>
-                  <label for="s-pel-rifilo" class="pill-option-label">Sì + Rifilo</label>
-                </div>
-                <div>
-                  <input type="radio" name="specchio_pellicola" id="s-pel-si" value="Sì" class="pill-option-input">
-                  <label for="s-pel-si" class="pill-option-label">Sì</label>
-                </div>
-                <div>
-                  <input type="radio" name="specchio_pellicola" id="s-pel-no" value="No" class="pill-option-input">
-                  <label for="s-pel-no" class="pill-option-label">No</label>
-                </div>
+            <!-- Pellicola Sicurezza & Lavorazioni Bordo -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="specchio-pellicola-select">Pellicola di Sicurezza Antiframmentazione</label>
+                <select name="specchio_pellicola" id="specchio-pellicola-select" class="form-select">
+                  <option value="Sì + Rifilo Perimetrale" selected>Sì + Rifilo Perimetrale</option>
+                  <option value="Sì">Sì</option>
+                  <option value="No">No</option>
+                </select>
               </div>
-            </div>
 
-            <!-- Lavorazioni Particolari (Bisello, Molatura 45, Forature, Tacche) -->
-            <div class="form-field" style="margin-bottom:20px;">
-              <label>Lavorazioni &amp; Finiture di Bordo</label>
-              <div class="pill-options-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div>
-                  <input type="checkbox" name="specchio_lav_bisello" id="s-lav-bis" class="checkbox-option-input">
-                  <label for="s-lav-bis" class="checkbox-option-label">Bisellatura perimetrale (mm)</label>
-                </div>
-                <div>
-                  <input type="checkbox" name="specchio_lav_45" id="s-lav-45" class="checkbox-option-input">
-                  <label for="s-lav-45" class="checkbox-option-label">Molatura inclinata a 45&deg;</label>
-                </div>
-                <div>
-                  <input type="checkbox" name="specchio_lav_fori" id="s-lav-fori" class="checkbox-option-input">
-                  <label for="s-lav-fori" class="checkbox-option-label">Fori passanti (faretti/pomoli)</label>
-                </div>
-                <div>
-                  <input type="checkbox" name="specchio_lav_tacche" id="s-lav-tacche" class="checkbox-option-input">
-                  <label for="s-lav-tacche" class="checkbox-option-label">Tacche per prese/interruttori</label>
-                </div>
+              <div class="form-field">
+                <label for="specchio-lavorazione-select">Lavorazione &amp; Finitura di Bordo</label>
+                <select name="specchio_lavorazione" id="specchio-lavorazione-select" class="form-select">
+                  <option value="Filo Lucido Base" selected>Filo Lucido Base</option>
+                  <option value="Bisellatura perimetrale">Bisellatura perimetrale</option>
+                  <option value="Molatura inclinata a 45°">Molatura inclinata a 45°</option>
+                  <option value="Fori passanti (faretti/pomoli)">Fori passanti (faretti/pomoli)</option>
+                  <option value="Tacche per prese/interruttori">Tacche per prese/interruttori</option>
+                </select>
               </div>
             </div>
 
             <!-- Tipo Taglio & Misure -->
             <div class="form-row">
               <div class="form-field">
-                <label>Tipo Taglio</label>
-                <div class="pill-options-grid">
-                  <div>
-                    <input type="radio" name="specchio_taglio" id="s-tag-sq" value="Squadrato" class="pill-option-input"
-                      checked>
-                    <label for="s-tag-sq" class="pill-option-label">Squadrato</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="specchio_taglio" id="s-tag-sag" value="Sagomato (tondo/arco)"
-                      class="pill-option-input">
-                    <label for="s-tag-sag" class="pill-option-label">Sagomato</label>
-                  </div>
-                </div>
+                <label for="specchio-taglio-select">Tipo Taglio</label>
+                <select name="specchio_taglio" id="specchio-taglio-select" class="form-select">
+                  <option value="Squadrato" selected>Squadrato</option>
+                  <option value="Sagomato (tondo/arco)">Sagomato (tondo/arco)</option>
+                </select>
               </div>
 
               <div class="form-field">
@@ -1349,38 +1150,6 @@
             Invia Richiesta di Preventivo
           </button>
         </form>
-
-        <!-- Dynamic Sidebar Summary Card -->
-        <aside class="quote-summary-card">
-          <div class="summary-header">
-            <h4 id="summary-scenario-name">Preventivo Parapetti &amp; Pensiline</h4>
-            <p>Configurazione in tempo reale</p>
-          </div>
-
-          <ul class="summary-list" id="summary-details-list">
-            <!-- Populated reactively by main.js -->
-          </ul>
-
-          <div
-            style="background:rgba(255,255,255,0.03); border:1px solid var(--c-glass-border-subtle); border-radius:var(--radius-sm); padding:16px; margin-bottom:20px; font-size:0.82rem; color:var(--c-grey-400);">
-            <div
-              style="display:flex; align-items:center; gap:8px; color:var(--c-silver-pure); margin-bottom:4px; font-weight:600;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              Risposta in 24/48 Ore
-            </div>
-            Un nostro tecnico analizzerà le quote e ti invierà la quotazione esatta comprensiva di schede materiali.
-          </div>
-
-          <div class="summary-guarantee">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-            Nessun impegno &bull; Consulenza tecnica diretta
-          </div>
-        </aside>
       </div>
     </div>
   </section>
