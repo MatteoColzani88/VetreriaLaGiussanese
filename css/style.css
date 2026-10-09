@@ -64,8 +64,8 @@
   --c-info: #93c5fd;
 
   /* Typography */
-  --font-heading: 'Loubag', 'Loubag Bold', 'Bodoni Moda', 'DM Serif Display', 'Playfair Display', serif;
-  --font-numbers: 'Loubag', 'Loubag Bold', 'Bodoni Moda', serif;
+  --font-heading: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-numbers: 'Loubag', 'Loubag Bold', 'DM Sans', sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
