@@ -680,36 +680,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.35;
 }
 
-/* Key Metrics Strip */
-.metrics-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 70px;
-  padding-top: 50px;
-  border-top: 1px solid var(--c-glass-border-subtle);
-}
-
-.metric-item {
-  text-align: left;
-}
-
-.metric-val {
-  font-family: var(--font-numbers);
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  font-weight: 700;
-  color: var(--c-grey-50);
-  line-height: 1.1;
-  margin-bottom: 6px;
-}
-
-.metric-lbl {
-  font-size: 0.85rem;
-  color: var(--c-grey-400);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
 /* --------------------------------------------------------------------------
    THE DUAL HUB SELECTOR: "SERIE" VS "SU MISURA"
    -------------------------------------------------------------------------- */
@@ -2027,9 +1997,6 @@ h1, h2, h3, h4, h5, h6 {
   }
   .contatti-grid {
     grid-template-columns: 1fr;
-  }
-  .metrics-strip {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
