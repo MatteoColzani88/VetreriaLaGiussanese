@@ -1346,7 +1346,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-layout-wrapper {
   max-width: 860px;
-  margin: 50px auto 0;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -1355,7 +1355,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  margin-bottom: 32px;
+  margin: 36px 0 44px;
 }
 
 .scenario-tab-btn {
