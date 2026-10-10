@@ -193,24 +193,22 @@ function initQuoteForm() {
         { key: 'Ferramenta / Posa', val: posa }
       ];
     } else if (scenario === 'docce') {
-      const finitura = activePanel.querySelector('select[name="doccia_finitura"]')?.value || 'Extrachiaro';
+      const apertura = activePanel.querySelector('select[name="doccia_apertura"]')?.value || 'Battente in nicchia';
+      const finitura = activePanel.querySelector('select[name="doccia_finitura"]')?.value || 'Trasparente extrachiaro';
       const spessore = activePanel.querySelector('select[name="doccia_spessore"]')?.value || '8 mm';
-      const apertura = activePanel.querySelector('select[name="doccia_apertura"]')?.value || 'Battente';
-      const config = activePanel.querySelector('select[name="doccia_config"]')?.value || 'Angolare (2 Lati)';
+      const cerniere = activePanel.querySelector('select[name="doccia_ferramenta_finitura"]')?.value || 'Cromo';
       const anticalcare = activePanel.querySelector('select[name="doccia_anticalcare"]')?.value || 'Sì (Consigliato)';
       const l1 = activePanel.querySelector('input[name="doccia_l1"]')?.value || '800';
       const l2 = activePanel.querySelector('input[name="doccia_l2"]')?.value || '1200';
       const h = activePanel.querySelector('input[name="doccia_h"]')?.value || '2000';
-      const ferrFinitura = activePanel.querySelector('select[name="doccia_ferramenta_finitura"]')?.value || 'Nero Opaco';
 
       items = [
-        { key: 'Configurazione', val: config },
         { key: 'Tipo Apertura', val: apertura },
         { key: 'Finitura Cristallo', val: finitura },
         { key: 'Spessore Lastra', val: spessore },
+        { key: 'Finitura Cerniere', val: cerniere },
         { key: 'Dimensioni Vano', val: `${l1} x ${l2} x H${h} mm` },
-        { key: 'Anti-Calcare', val: anticalcare },
-        { key: 'Finitura Accessori', val: ferrFinitura }
+        { key: 'Anti-Calcare', val: anticalcare }
       ];
     } else if (scenario === 'specchi') {
       const finitura = activePanel.querySelector('select[name="specchio_finitura"]')?.value || 'Naturale Chiaro';

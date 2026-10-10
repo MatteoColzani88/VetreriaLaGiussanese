@@ -947,8 +947,9 @@
               <div class="form-field">
                 <label for="parapetti-ferramenta-select">Sistema di Fissaggio / Ferramenta</label>
                 <select name="parapetti_ferramenta" id="parapetti-ferramenta-select" class="form-select">
-                  <option value="Profilo continuo a terra (affogato o a vista)" selected>Profilo continuo a terra (affogato o a vista)</option>
-                  <option value="Puntiforme / Borchie laterali in acciaio">Puntiforme / Borchie laterali in acciaio</option>
+                  <option value="Profilo continuo a terra (affogato o a vista)" selected>Profilo continuo a terra
+                    (affogato o a vista)</option>
+                  <option value="Puntuale / Borchie laterali in acciaio">Puntuale / Borchie laterali in acciaio</option>
                   <option value="Morsetti a pavimento o piantoni">Morsetti a pavimento o piantoni</option>
                   <option value="Tiranti per pensilina in acciaio inox">Tiranti per pensilina in acciaio inox</option>
                 </select>
@@ -971,225 +972,218 @@
             </div>
           </div>
 
-      <!-- SCENARIO 2: BOX DOCCE (from LAYOUT PREVENTIVI DOCCE.pdf) -->
-      <div class="scenario-panel" id="scenario-docce" style="display:none;">
-        <div class="form-group-title">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          </svg>
-          Configurazione Box Doccia Su Misura
-        </div>
+          <!-- SCENARIO 2: BOX DOCCE (from LAYOUT PREVENTIVI DOCCE.pdf) -->
+          <div class="scenario-panel" id="scenario-docce" style="display:none;">
+            <div class="form-group-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              </svg>
+              Configurazione Box Doccia Su Misura
+            </div>
 
-        <!-- Configurazione Spazio & Apertura -->
-        <div class="form-row">
-          <div class="form-field">
-            <label for="doccia-config-select">Configurazione Vano</label>
-            <select name="doccia_config" id="doccia-config-select" class="form-select">
-              <option value="Angolare (2 Lati)" selected>Angolare (2 Lati)</option>
-              <option value="Nicchia (1 Lato)">Nicchia (1 Lato)</option>
-              <option value="3 Lati (Centro Parete)">3 Lati (Centro Parete)</option>
-              <option value="4 Lati (Centro Stanza)">4 Lati (Centro Stanza)</option>
-            </select>
+            <!-- Riga 1: Tipo Apertura & Finitura Cristallo -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="doccia-apertura-select">Tipo di Apertura</label>
+                <select name="doccia_apertura" id="doccia-apertura-select" class="form-select">
+                  <option value="Battente in nicchia" selected>Battente in nicchia</option>
+                  <option value="Battente 3 lati">Battente 3 lati</option>
+                  <option value="Battente 4 lati">Battente 4 lati</option>
+                  <option value="Scorrevole in nicchia">Scorrevole in nicchia</option>
+                  <option value="Scorrevole 3 lati">Scorrevole 3 lati</option>
+                  <option value="Scorrevole 4 lati">Scorrevole 4 lati</option>
+                  <option value="Walk in">Walk in</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="doccia-finitura-select">Finitura Cristallo</label>
+                <select name="doccia_finitura" id="doccia-finitura-select" class="form-select">
+                  <option value="Trasparente extrachiaro" selected>Trasparente extrachiaro</option>
+                  <option value="Trasparente normale">Trasparente normale</option>
+                  <option value="Trasparente Bronzo / Fumé">Trasparente Bronzo / Fumé</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Riga 2: Spessore Lastra, Finitura Cerniere & Trattamento Anticalcare -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="doccia-spessore-select">Spessore Lastra</label>
+                <select name="doccia_spessore" id="doccia-spessore-select" class="form-select">
+                  <option value="8 mm" selected>8 mm</option>
+                  <option value="6 mm">6 mm</option>
+                  <option value="10 mm">10 mm</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="doccia-ferramenta-select">Finitura Cerniere</label>
+                <select name="doccia_ferramenta_finitura" id="doccia-ferramenta-select" class="form-select">
+                  <option value="Cromo" selected>Cromo</option>
+                  <option value="Satinato">Satinato</option>
+                  <option value="Nero opaco">Nero opaco</option>
+                  <option value="A richiesta">A richiesta</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Riga 3: Trattamento Anticalcare -->
+            <div class="form-row">
+              <div class="form-field" style="grid-column: 1 / -1;">
+                <label for="doccia-anticalcare-select">Trattamento Idrorepellente Anticalcare</label>
+                <select name="doccia_anticalcare" id="doccia-anticalcare-select" class="form-select">
+                  <option value="Sì (Consigliato)" selected>Sì (Vetro sempre brillante - Consigliato)</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Misure indicative -->
+            <div class="form-row triple">
+              <div class="form-field">
+                <label>Lato 1 (mm)</label>
+                <input type="number" name="doccia_l1" class="form-input" placeholder="800" value="800">
+              </div>
+              <div class="form-field">
+                <label>Lato 2 (mm)</label>
+                <input type="number" name="doccia_l2" class="form-input" placeholder="1200" value="1200">
+              </div>
+              <div class="form-field">
+                <label>Altezza H (mm)</label>
+                <input type="number" name="doccia_h" class="form-input" placeholder="2000" value="2000">
+              </div>
+            </div>
           </div>
 
-          <div class="form-field">
-            <label for="doccia-apertura-select">Tipo di Apertura</label>
-            <select name="doccia_apertura" id="doccia-apertura-select" class="form-select">
-              <option value="Battente" selected>Battente</option>
-              <option value="Scorrevole">Scorrevole</option>
-              <option value="Walk-In (Fisso Libero)">Walk-In (Fisso Libero)</option>
-            </select>
-          </div>
-        </div>
+          <!-- SCENARIO 3: SPECCHI SU MISURA (from LAYOUT PREVENTIVO SPECCHI.pdf) -->
+          <div class="scenario-panel" id="scenario-specchi" style="display:none;">
+            <div class="form-group-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              Specifiche Specchio Su Misura
+            </div>
 
-        <!-- Finitura & Spessore -->
-        <div class="form-row">
-          <div class="form-field">
-            <label for="doccia-finitura-select">Finitura Cristallo</label>
-            <select name="doccia_finitura" id="doccia-finitura-select" class="form-select">
-              <option value="Extrachiaro" selected>Extrachiaro</option>
-              <option value="Trasparente">Trasparente</option>
-              <option value="Bronzo / Fumé">Bronzo / Fumé</option>
-            </select>
+            <!-- Finitura & Spessore -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="specchio-finitura-select">Finitura Specchio</label>
+                <select name="specchio_finitura" id="specchio-finitura-select" class="form-select">
+                  <option value="Naturale Chiaro" selected>Naturale Chiaro</option>
+                  <option value="Extrachiaro (Pure HD)">Extrachiaro (Pure HD)</option>
+                  <option value="Bronzo / Fumé">Bronzo / Fumé</option>
+                  <option value="Specchio Bianco / Nero">Specchio Bianco / Nero</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="specchio-spessore-select">Spessore</label>
+                <select name="specchio_spessore" id="specchio-spessore-select" class="form-select">
+                  <option value="5 mm (Consigliato)" selected>5 mm (Consigliato)</option>
+                  <option value="4 mm">4 mm</option>
+                  <option value="6 mm (Grandi specchi)">6 mm (Grandi specchi)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Pellicola Sicurezza & Lavorazioni Bordo -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="specchio-pellicola-select">Pellicola di Sicurezza Antiframmentazione</label>
+                <select name="specchio_pellicola" id="specchio-pellicola-select" class="form-select">
+                  <option value="Sì + Rifilo Perimetrale" selected>Sì + Rifilo Perimetrale</option>
+                  <option value="Sì">Sì</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="specchio-lavorazione-select">Lavorazione &amp; Finitura di Bordo</label>
+                <select name="specchio_lavorazione" id="specchio-lavorazione-select" class="form-select">
+                  <option value="Filo Lucido Base" selected>Filo Lucido Base</option>
+                  <option value="Bisellatura perimetrale">Bisellatura perimetrale</option>
+                  <option value="Molatura inclinata a 45°">Molatura inclinata a 45°</option>
+                  <option value="Fori passanti (faretti/pomoli)">Fori passanti (faretti/pomoli)</option>
+                  <option value="Tacche per prese/interruttori">Tacche per prese/interruttori</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Tipo Taglio & Misure -->
+            <div class="form-row">
+              <div class="form-field">
+                <label for="specchio-taglio-select">Tipo Taglio</label>
+                <select name="specchio_taglio" id="specchio-taglio-select" class="form-select">
+                  <option value="Squadrato" selected>Squadrato</option>
+                  <option value="Sagomato (tondo/arco)">Sagomato (tondo/arco)</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label>Quantità Pezzi</label>
+                <input type="number" name="specchio_qta" class="form-input" value="1" min="1">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>Larghezza Base (mm)</label>
+                <input type="number" name="specchio_l" class="form-input" placeholder="1000" value="1000">
+              </div>
+              <div class="form-field">
+                <label>Altezza (mm)</label>
+                <input type="number" name="specchio_h" class="form-input" placeholder="1800" value="1800">
+              </div>
+            </div>
           </div>
 
-          <div class="form-field">
-            <label for="doccia-spessore-select">Spessore Lastra</label>
-            <select name="doccia_spessore" id="doccia-spessore-select" class="form-select">
-              <option value="8 mm (Standard Prestige)" selected>8 mm (Standard Prestige)</option>
-              <option value="6 mm">6 mm</option>
-              <option value="10 mm (Solid Luxury)">10 mm (Solid Luxury)</option>
-            </select>
-          </div>
-        </div>
+          <!-- COMMON: DATI CLIENTE & CONTATTO -->
+          <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--c-glass-border-subtle);">
+            <div class="form-group-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Dati di Contatto &amp; Cantiere
+            </div>
 
-        <!-- Trattamento Anticalcare & Finitura Ferramenta -->
-        <div class="form-row">
-          <div class="form-field">
-            <label for="doccia-anticalcare-select">Trattamento Idrorepellente Anticalcare</label>
-            <select name="doccia_anticalcare" id="doccia-anticalcare-select" class="form-select">
-              <option value="Sì (Consigliato)" selected>Sì (Vetro sempre brillante - Consigliato)</option>
-              <option value="No">No</option>
-            </select>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Nome / Cognome o Ragione Sociale *</label>
+                <input type="text" id="field-client-name" class="form-input"
+                  placeholder="Mario Rossi / Studio Architettura" required>
+              </div>
+              <div class="form-field">
+                <label>Email *</label>
+                <input type="email" id="field-client-email" class="form-input" placeholder="email@esempio.it" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>Telefono / Cellulare *</label>
+                <input type="tel" id="field-client-phone" class="form-input" placeholder="+39 333 1234567" required>
+              </div>
+              <div class="form-field">
+                <label>Comune &bull; Provincia in Lombardia</label>
+                <input type="text" id="field-client-city" class="form-input"
+                  placeholder="Es. Giussano, Milano, Monza, Lecco..." value="Milano / Lombardia">
+              </div>
+            </div>
+
+            <div class="form-field" style="margin-bottom:20px;">
+              <label>Note Aggiuntive, Dettagli o Fornitura Ferramenta</label>
+              <textarea name="client_notes" class="form-textarea"
+                placeholder="Descrivi eventuali richieste particolari, vincoli di posa o se hai un disegno tecnico in dwg/pdf..."></textarea>
+            </div>
           </div>
 
-          <div class="form-field">
-            <label for="doccia-ferramenta-select">Finitura Cerniere, Profili &amp; Maniglie</label>
-            <select name="doccia_ferramenta_finitura" id="doccia-ferramenta-select" class="form-select">
-              <option value="Nero Opaco (Matt Black)" selected>Nero Opaco (Matt Black)</option>
-              <option value="Cromo Lucido Brillante">Cromo Lucido Brillante</option>
-              <option value="Acciaio Inox Satinato">Acciaio Inox Satinato</option>
-              <option value="Ottone / Oro Spazzolato">Ottone / Oro Spazzolato</option>
-              <option value="Bronzo Satinato">Bronzo Satinato</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Misure indicative -->
-        <div class="form-row triple">
-          <div class="form-field">
-            <label>Lato 1 (mm)</label>
-            <input type="number" name="doccia_l1" class="form-input" placeholder="800" value="800">
-          </div>
-          <div class="form-field">
-            <label>Lato 2 (mm)</label>
-            <input type="number" name="doccia_l2" class="form-input" placeholder="1200" value="1200">
-          </div>
-          <div class="form-field">
-            <label>Altezza H (mm)</label>
-            <input type="number" name="doccia_h" class="form-input" placeholder="2000" value="2000">
-          </div>
-        </div>
+          <button type="submit" class="btn-submit-quote">
+            Invia Richiesta di Preventivo
+          </button>
+        </form>
       </div>
-
-      <!-- SCENARIO 3: SPECCHI SU MISURA (from LAYOUT PREVENTIVO SPECCHI.pdf) -->
-      <div class="scenario-panel" id="scenario-specchi" style="display:none;">
-        <div class="form-group-title">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-          </svg>
-          Specifiche Specchio Su Misura
-        </div>
-
-        <!-- Finitura & Spessore -->
-        <div class="form-row">
-          <div class="form-field">
-            <label for="specchio-finitura-select">Finitura Specchio</label>
-            <select name="specchio_finitura" id="specchio-finitura-select" class="form-select">
-              <option value="Naturale Chiaro" selected>Naturale Chiaro</option>
-              <option value="Extrachiaro (Pure HD)">Extrachiaro (Pure HD)</option>
-              <option value="Bronzo / Fumé">Bronzo / Fumé</option>
-              <option value="Specchio Bianco / Nero">Specchio Bianco / Nero</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label for="specchio-spessore-select">Spessore</label>
-            <select name="specchio_spessore" id="specchio-spessore-select" class="form-select">
-              <option value="5 mm (Consigliato)" selected>5 mm (Consigliato)</option>
-              <option value="4 mm">4 mm</option>
-              <option value="6 mm (Grandi specchi)">6 mm (Grandi specchi)</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Pellicola Sicurezza & Lavorazioni Bordo -->
-        <div class="form-row">
-          <div class="form-field">
-            <label for="specchio-pellicola-select">Pellicola di Sicurezza Antiframmentazione</label>
-            <select name="specchio_pellicola" id="specchio-pellicola-select" class="form-select">
-              <option value="Sì + Rifilo Perimetrale" selected>Sì + Rifilo Perimetrale</option>
-              <option value="Sì">Sì</option>
-              <option value="No">No</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label for="specchio-lavorazione-select">Lavorazione &amp; Finitura di Bordo</label>
-            <select name="specchio_lavorazione" id="specchio-lavorazione-select" class="form-select">
-              <option value="Filo Lucido Base" selected>Filo Lucido Base</option>
-              <option value="Bisellatura perimetrale">Bisellatura perimetrale</option>
-              <option value="Molatura inclinata a 45°">Molatura inclinata a 45°</option>
-              <option value="Fori passanti (faretti/pomoli)">Fori passanti (faretti/pomoli)</option>
-              <option value="Tacche per prese/interruttori">Tacche per prese/interruttori</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Tipo Taglio & Misure -->
-        <div class="form-row">
-          <div class="form-field">
-            <label for="specchio-taglio-select">Tipo Taglio</label>
-            <select name="specchio_taglio" id="specchio-taglio-select" class="form-select">
-              <option value="Squadrato" selected>Squadrato</option>
-              <option value="Sagomato (tondo/arco)">Sagomato (tondo/arco)</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label>Quantità Pezzi</label>
-            <input type="number" name="specchio_qta" class="form-input" value="1" min="1">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label>Larghezza Base (mm)</label>
-            <input type="number" name="specchio_l" class="form-input" placeholder="1000" value="1000">
-          </div>
-          <div class="form-field">
-            <label>Altezza (mm)</label>
-            <input type="number" name="specchio_h" class="form-input" placeholder="1800" value="1800">
-          </div>
-        </div>
-      </div>
-
-      <!-- COMMON: DATI CLIENTE & CONTATTO -->
-      <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--c-glass-border-subtle);">
-        <div class="form-group-title">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          Dati di Contatto &amp; Cantiere
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label>Nome / Cognome o Ragione Sociale *</label>
-            <input type="text" id="field-client-name" class="form-input" placeholder="Mario Rossi / Studio Architettura"
-              required>
-          </div>
-          <div class="form-field">
-            <label>Email *</label>
-            <input type="email" id="field-client-email" class="form-input" placeholder="email@esempio.it" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label>Telefono / Cellulare *</label>
-            <input type="tel" id="field-client-phone" class="form-input" placeholder="+39 333 1234567" required>
-          </div>
-          <div class="form-field">
-            <label>Comune &bull; Provincia in Lombardia</label>
-            <input type="text" id="field-client-city" class="form-input"
-              placeholder="Es. Giussano, Milano, Monza, Lecco..." value="Milano / Lombardia">
-          </div>
-        </div>
-
-        <div class="form-field" style="margin-bottom:20px;">
-          <label>Note Aggiuntive, Dettagli o Fornitura Ferramenta</label>
-          <textarea name="client_notes" class="form-textarea"
-            placeholder="Descrivi eventuali richieste particolari, vincoli di posa o se hai un disegno tecnico in dwg/pdf..."></textarea>
-        </div>
-      </div>
-
-      <button type="submit" class="btn-submit-quote">
-        Invia Richiesta di Preventivo
-      </button>
-      </form>
-    </div>
     </div>
   </section>
 
