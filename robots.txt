@@ -1,0 +1,6 @@
+# robots.txt for Vetreria La Giussanese srl
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.vetrerialagiussanese.it/sitemap.xml
