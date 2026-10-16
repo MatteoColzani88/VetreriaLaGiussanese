@@ -1333,6 +1333,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--c-glass-border);
   color: var(--c-silver-pure);
   align-self: flex-start;
+  margin-bottom: 3px;
 }
 
 /* --------------------------------------------------------------------------
