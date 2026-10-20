@@ -366,10 +366,10 @@ function initMobileMenu() {
       navLinks.style.top = '100%';
       navLinks.style.left = '0';
       navLinks.style.width = '100%';
-      navLinks.style.background = 'rgba(14, 16, 20, 0.98)';
+      navLinks.style.background = 'rgba(247, 246, 242, 0.98)';
       navLinks.style.padding = '24px';
-      navLinks.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-      navLinks.style.boxShadow = '0 15px 30px rgba(0,0,0,0.8)';
+      navLinks.style.borderBottom = '1px solid var(--c-glass-border)';
+      navLinks.style.boxShadow = 'var(--shadow-elevation)';
     } else {
       navLinks.style.display = '';
     }
