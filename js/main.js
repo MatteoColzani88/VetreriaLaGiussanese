@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initMobileMenu();
   initSmoothScroll();
+  initMobileCoreOfferings();
 });
 
 /* --------------------------------------------------------------------------
@@ -409,3 +410,36 @@ function initSmoothScroll() {
     });
   });
 }
+
+/* --------------------------------------------------------------------------
+   8. MOBILE CORE OFFERINGS TOGGLE (< 768px)
+   -------------------------------------------------------------------------- */
+function initMobileCoreOfferings() {
+  const btnSuMisura = document.getElementById('btn-toggle-su-misura');
+  const btnInSerie = document.getElementById('btn-toggle-in-serie');
+  const cardSuMisura = document.getElementById('mobile-card-su-misura');
+  const cardInSerie = document.getElementById('mobile-card-in-serie');
+
+  if (!btnSuMisura || !btnInSerie || !cardSuMisura || !cardInSerie) return;
+
+  btnSuMisura.addEventListener('click', () => {
+    btnSuMisura.classList.add('active');
+    btnSuMisura.setAttribute('aria-selected', 'true');
+    btnInSerie.classList.remove('active');
+    btnInSerie.setAttribute('aria-selected', 'false');
+
+    cardSuMisura.classList.add('active');
+    cardInSerie.classList.remove('active');
+  });
+
+  btnInSerie.addEventListener('click', () => {
+    btnInSerie.classList.add('active');
+    btnInSerie.setAttribute('aria-selected', 'true');
+    btnSuMisura.classList.remove('active');
+    btnSuMisura.setAttribute('aria-selected', 'false');
+
+    cardInSerie.classList.add('active');
+    cardSuMisura.classList.remove('active');
+  });
+}
+

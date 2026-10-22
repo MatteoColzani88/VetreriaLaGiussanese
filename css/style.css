@@ -2031,33 +2031,631 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (max-width: 768px) {
-  .nav-links, .btn-header-cta {
-    display: none;
+/* --------------------------------------------------------------------------
+   DESKTOP / MOBILE RESPONSIVE DISPLAY UTILITIES
+   -------------------------------------------------------------------------- */
+.mobile-only-block,
+.mobile-only-flex,
+.mobile-only-inline,
+.btn-header-call-mobile {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  /* Hide Desktop Elements on Mobile */
+  .desktop-only-block,
+  .desktop-only-grid {
+    display: none !important;
   }
+  .desktop-only-flex {
+    display: none !important;
+  }
+  .desktop-only-inline {
+    display: none !important;
+  }
+
+  /* Show Mobile Dedicated Elements */
+  .mobile-only-block {
+    display: block !important;
+  }
+  .mobile-only-flex {
+    display: flex !important;
+  }
+  .mobile-only-inline {
+    display: inline-block !important;
+  }
+  .btn-header-call-mobile {
+    display: inline-flex !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     1. COMPACT HEADER & DIRECT "CHIAMA" CTA
+     ------------------------------------------------------------------------ */
+  .site-header {
+    padding: 10px 0;
+    background-color: rgba(249, 248, 245, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--c-glass-border);
+  }
+
+  .nav-logo img {
+    height: 30px;
+    width: auto;
+  }
+
+  .nav-links,
+  .btn-header-cta {
+    display: none !important;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-header-call-mobile {
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--c-grey-50);
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    min-height: 48px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--c-grey-50);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .btn-header-call-mobile svg {
+    stroke: #ffffff;
+  }
+
+  .btn-header-call-mobile:active {
+    transform: scale(0.96);
+    background: #000000;
+  }
+
   .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--c-glass-border-bright);
+    border-radius: var(--radius-md);
+  }
+
+  /* ------------------------------------------------------------------------
+     2. STREAMLINED HERO SECTION
+     ------------------------------------------------------------------------ */
+  .hero-section {
+    min-height: calc(100vh - 60px);
+    padding: 90px 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    margin-top: 0;
+    padding: 0 4px;
+    max-width: 100%;
+  }
+
+  .hero-logo-box {
+    margin: 0 auto 16px;
+    max-width: 260px;
+  }
+
+  .hero-logo-svg {
+    max-height: 52px;
+  }
+
+  .hero-tagline {
+    font-size: 1.55rem;
+    line-height: 1.28;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+
+  .hero-subtext {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+    color: var(--c-grey-300);
+  }
+
+  .mobile-hero-btn {
+    min-height: 50px;
+    width: 100%;
+    font-size: 0.96rem;
+    font-weight: 600;
+    padding: 13px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-buttons.mobile-only-flex {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  /* ------------------------------------------------------------------------
+     3. MOBILE CORE OFFERINGS OVERVIEW
+     ------------------------------------------------------------------------ */
+  .mobile-core-section {
+    padding: 48px 0 36px;
+    background: linear-gradient(180deg, rgba(249, 248, 245, 0.9) 0%, #ffffff 100%);
+  }
+
+  .mobile-core-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .mobile-core-title {
+    font-size: 1.85rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .mobile-core-intro {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--c-grey-400);
+    margin-bottom: 20px;
+    padding: 0 4px;
+  }
+
+  /* Mobile Toggle Switch */
+  .mobile-toggle-switch {
+    display: inline-flex;
+    background: rgba(35, 30, 25, 0.06);
+    padding: 4px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--c-glass-border);
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .mobile-toggle-btn {
+    min-height: 48px;
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    color: var(--c-grey-300);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .mobile-toggle-btn.active {
+    background: #ffffff;
+    color: var(--c-grey-50);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Core Offering Cards */
+  .mobile-core-cards {
+    margin-top: 20px;
+  }
+
+  .mobile-offering-card {
+    display: none;
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--c-glass-border-bright);
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(35, 30, 25, 0.06);
+    animation: fadeInCard 0.25s ease-out;
+  }
+
+  .mobile-offering-card.active {
     display: block;
   }
-  .services-grid, .products-grid, .macchine-grid {
-    grid-template-columns: 1fr;
+
+  @keyframes fadeInCard {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  .scenario-tabs {
-    grid-template-columns: 1fr;
+
+  .mobile-offering-media {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
   }
-  .arch-badges {
-    grid-template-columns: 1fr;
+
+  .mobile-offering-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  .arch-badge-item {
-    white-space: normal;
+
+  .mobile-offering-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(24, 26, 29, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
   }
-  .form-row, .form-row.triple {
-    grid-template-columns: 1fr;
+
+  .mobile-offering-body {
+    padding: 22px 20px;
   }
-  .values-grid {
-    grid-template-columns: 1fr;
+
+  .mobile-offering-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--c-grey-50);
   }
-  .macchine-intro-box {
+
+  .mobile-offering-desc {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--c-grey-300);
+    margin-bottom: 18px;
+  }
+
+  .mobile-pills-list {
+    list-style: none;
+    display: flex;
     flex-direction: column;
-    padding: 24px;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 0;
+  }
+
+  .mobile-pills-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.98rem;
+    line-height: 1.35;
+    color: var(--c-grey-50);
+  }
+
+  .mobile-pills-list li strong {
+    font-weight: 700;
+    color: var(--c-grey-50);
+    letter-spacing: -0.01em;
+  }
+
+  .mobile-pills-list .pill-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--c-silver-pure);
+    flex-shrink: 0;
+  }
+
+  .mobile-card-cta {
+    margin-top: 10px;
+  }
+
+  .btn-mobile-card-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 48px;
+    background: var(--c-silver-light);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(24, 26, 29, 0.12);
+  }
+
+  .btn-mobile-card-action:active {
+    background: #000000;
+  }
+
+  /* ------------------------------------------------------------------------
+     4. MOBILE DIRECT CONTACT SECTION (NO FORM)
+     ------------------------------------------------------------------------ */
+  .section-contatti {
+    padding: 40px 0 90px;
+  }
+
+  .mobile-contact-wrapper {
+    margin-top: 12px;
+  }
+
+  .mobile-contact-banner {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--c-glass-border-bright);
+    border-radius: var(--radius-lg);
+    padding: 20px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 18px rgba(35, 30, 25, 0.04);
+  }
+
+  .badge-direct {
+    display: inline-block;
+    background: rgba(30, 142, 62, 0.12);
+    color: #1e8e3e;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    margin-bottom: 8px;
+  }
+
+  .mobile-contact-banner h3 {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+  }
+
+  .mobile-contact-banner p {
+    font-size: 0.9rem;
+    color: var(--c-grey-400);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .mobile-direct-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .btn-direct-contact {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 56px;
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(35, 30, 25, 0.08);
+    transition: transform var(--transition-fast), filter var(--transition-fast);
+  }
+
+  .btn-direct-contact:active {
+    transform: scale(0.98);
+  }
+
+  .btn-direct-call {
+    background: #181a1d;
+    color: #ffffff;
+  }
+
+  .btn-direct-call .direct-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .btn-direct-call svg {
+    stroke: #ffffff;
+  }
+
+  .btn-direct-wa {
+    background: #25d366;
+    color: #ffffff;
+  }
+
+  .btn-direct-wa .direct-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .btn-direct-wa svg {
+    fill: #ffffff;
+  }
+
+  .btn-direct-mail {
+    background: #ffffff;
+    color: var(--c-grey-50);
+    border: 1px solid var(--c-glass-border-bright);
+  }
+
+  .btn-direct-mail .direct-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(35, 30, 25, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .btn-direct-mail svg {
+    stroke: var(--c-grey-100);
+  }
+
+  .direct-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .direct-sub {
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+  }
+
+  .direct-main {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.25;
+    word-break: break-all;
+  }
+
+  /* Address & Hours Cards */
+  .mobile-address-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobile-address-card,
+  .mobile-hours-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #ffffff;
+    border: 1px solid var(--c-glass-border-bright);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+
+  .mobile-address-icon,
+  .mobile-hours-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(35, 30, 25, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--c-grey-100);
+  }
+
+  .mobile-address-text h4,
+  .mobile-hours-text h4 {
+    font-size: 0.98rem;
+    margin-bottom: 4px;
+    color: var(--c-grey-50);
+  }
+
+  .mobile-address-text p,
+  .mobile-hours-text p {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--c-grey-300);
+    margin: 0;
+  }
+
+  .maps-indicator {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #1a73e8;
+  }
+
+  /* ------------------------------------------------------------------------
+     5. STICKY BOTTOM ACTION BAR (< 768px)
+     ------------------------------------------------------------------------ */
+  .mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid var(--c-glass-border);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 8px 12px;
+    gap: 10px;
+  }
+
+  .sticky-action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: transform var(--transition-fast);
+  }
+
+  .sticky-action-btn:active {
+    transform: scale(0.96);
+  }
+
+  .sticky-btn-call {
+    background: #181a1d;
+    color: #ffffff;
+    box-shadow: 0 3px 12px rgba(24, 26, 29, 0.2);
+  }
+
+  .sticky-btn-call svg {
+    stroke: #ffffff;
+  }
+
+  .sticky-btn-wa {
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 3px 12px rgba(37, 211, 102, 0.25);
+  }
+
+  .sticky-btn-wa svg {
+    fill: #ffffff;
+  }
+
+  /* Add padding to footer so sticky bar doesn't overlap footer copyright */
+  .site-footer {
+    padding-bottom: 84px;
   }
 }
+
